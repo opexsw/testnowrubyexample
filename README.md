@@ -37,7 +37,7 @@ This suite runs scenarios related to following:
 1. __git clone https://github.com/krupani/magento_automation.git__
 2. __bundle install (this will install all dependencies for running magento automation suite)__
 
-####NOTE: To avoid all the requiremt and setup related extra work, use [TESTNOW](https://opexsoftware.com/testnow)
+####NOTE: To avoid all the requirement and setup related extra work, use [TESTNOW](https://opexsoftware.com/testnow)
 
 ## Execution:
 
@@ -51,5 +51,11 @@ Magento automation reports are created in following 2 types of format
 
 Reports are created inside the Reports directory with above mentioned filenames
 
+##Author:
+
+* Name: __Kaushal Rupani__
+* Organization: __Opex Software__
+* Email: __kaushal.rupani@opexsoftware.com__
+
 ##Licence:
-For Licence information, see [here](https://github.com/krupani/magento_automation/edit/master/Licence.txt)
+For Licence information, see [here](https://github.com/opexsw/testnowrubyexample/blob/master/LICENSE.txt)
