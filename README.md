@@ -1,4 +1,4 @@
-# MAGENTO AUTOMATION SUITE
+# TESTNOW RUBY EXAMPLE
 Contains cucumber features for very famous magento web application.
 
 ## Overview:
@@ -16,6 +16,22 @@ This suite runs scenarios related to following:
 1. Login and Signup related features
 2. Buying of a product with different checkout methods
 3. Newsletter subscriptions
+
+##Purpose:
+
+Major purpose of this example automation is to understand how one can make maximum usage of [TestNow](https://opexsoftware/testnow) cross browser testing with minimum effort by following some best practices mentioned here. 
+Few Best Practices are as follows:
+
+1. How to initialize different browsers
+2. How to write appropriate setup and teardown's
+3. How to take failed scenario screenshots
+4. How to create json and html reports which helps TestNow to create consolidated reports for you.
+5. How to organize code in case of Ruby Cucumber setup
+6. and few more which you can relate to ... :)
+
+## Application Under Test (AUT)
+
+__Magento__ is an ecommerce platform built on open source technology which provides online merchants with a flexible shopping cart system, as well as control over the look, content and functionality of their online store. Magento offers powerful marketing, search engine optimization, and catalog-management tools.
 
 ## Requirements:
 
