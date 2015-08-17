@@ -50,7 +50,7 @@ __Magento__ is an ecommerce platform built on open source technology which provi
 
 ## Setup:
 
-1. __git clone https://github.com/krupani/magento_automation.git__
+1. __git clone https://github.com/opexsw/testnowrubyexample.git__
 2. __bundle install (this will install all dependencies for running magento automation suite)__
 
 ####NOTE: To avoid all the requirement and setup related extra work, use [TESTNOW](https://opexsoftware.com/testnow)
