@@ -2,7 +2,7 @@ When /^I do a global search using "([^"]*)" keyword$/ do |keyword|
   checkout = CheckoutPage.new(@driver)
   checkout.search_box.send_keys(keyword)
   checkout.search_button.click
-  checkout.search_box.send_keys(:return)
+  #checkout.search_box.send_keys(:return)
 end
 
 Then /^I should see products$/ do
