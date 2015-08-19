@@ -1,3 +1,9 @@
+# Name: checkout_steps.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a cucumber step-definitions file containing implementations of GWT's feature steps
+
+
 When /^I do a global search using "([^"]*)" keyword$/ do |keyword|
   checkout = CheckoutPage.new(@driver)
   checkout.search_box.send_keys(keyword)

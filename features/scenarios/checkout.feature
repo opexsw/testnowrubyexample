@@ -1,3 +1,8 @@
+#Name: checkout.feature
+#Copyright 2015, Opex Software
+#Apache License, Version 2.0
+#This is a cucumber feature file containing scenarios in GWT format
+
 Feature: Add product to cart and checkout using different payment methods
 
   Background:

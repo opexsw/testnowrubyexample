@@ -1,3 +1,9 @@
+# Name: dashboard_steps.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a cucumber step-definitions file containing implementations of GWT's feature steps
+
+
 When /^I edit (newsletter|contact|billing|shipping) section on My Dashboard page$/ do |section|
   driver.find_element(xpath: "//h3[contains(text(),'#{section.capitalize}')]/parent::div/a").click
 end

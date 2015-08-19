@@ -1,3 +1,9 @@
+# Name: common_steps.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a cucumber step-definitions file containing implementations of GWT's feature steps
+
+
 Then /^I should be on "([^"]*)" page$/ do |page|
   case page
     when "My Dashboard"

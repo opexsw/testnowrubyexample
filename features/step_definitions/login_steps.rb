@@ -1,3 +1,9 @@
+# Name: login_steps.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a cucumber step-definitions file containing implementations of GWT's feature steps
+
+
 Given /^I am on magento (customer|admin) page$/ do |portal|
   magento = LoginPage.new(@driver)
   magento.go_to_homepage(portal)

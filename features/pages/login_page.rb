@@ -1,3 +1,9 @@
+# Name: login_page.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a page object file for Magento Login page containing web-elements and its interactive methods
+
+
 class LoginPage < PageObject
 
   element :account_section, {css: "a.skip-account"}

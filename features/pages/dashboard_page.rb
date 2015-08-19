@@ -1,3 +1,9 @@
+# Name: dashboard_page.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a page object file for Magento Dashboard page containing web-elements and its interactive methods
+
+
 class DashboardPage < PageObject
 
   element :save_button, {css: "button[title*='Save']"}

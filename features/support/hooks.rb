@@ -1,3 +1,8 @@
+# Name: hooks.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This file contains the setup and teardown methods for the tests
+
 
 Before do
   case ENV['BROWSER'].downcase

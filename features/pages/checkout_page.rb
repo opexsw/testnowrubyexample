@@ -1,3 +1,9 @@
+# Name: checkout_page.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is a page object file for Magento Checkout page containing web-elements and its interactive methods
+
+
 class CheckoutPage < PageObject
 
   element :search_box, {id: "search"}

@@ -1,3 +1,8 @@
+# Name: env.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This file contains requiring all the dependencies required to execute the tests
+
 require 'rubygems'
 require 'rspec'
 require 'selenium-webdriver'

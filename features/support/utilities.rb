@@ -1,3 +1,8 @@
+# Name: utilities.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This file contains the utility methods frequently used in webdriver automation
+
 module TestNowRubyExample
 
   def wait_for_title text , timeout = 10

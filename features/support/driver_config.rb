@@ -1,3 +1,10 @@
+# Name: driver_config.rb
+# Copyright 2015, Opex Software
+# Apache License, Version 2.0
+# This is config file containing methods to initialize different browsers
+# to enable cross-browser testing for this application
+
+
 module TestNowRubyExample
 
   ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
