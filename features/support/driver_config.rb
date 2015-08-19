@@ -1,4 +1,4 @@
-module MagentoAutomation
+module TestNowRubyExample
 
   ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
 
@@ -6,7 +6,7 @@ module MagentoAutomation
   def launch_driver_firefox
     @driver = Selenium::WebDriver.for :firefox
     @driver.manage.timeouts.implicit_wait = 30
-    @driver.manage.timeouts.page_load = 120
+    #@driver.manage.timeouts.page_load = 120
     @driver.manage.window.maximize
   end
 

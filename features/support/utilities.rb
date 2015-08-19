@@ -1,4 +1,4 @@
-module MagentoAutomation
+module TestNowRubyExample
 
   def wait_for_title text , timeout = 10
     wait = Selenium::WebDriver::Wait.new(:timeout => timeout)
