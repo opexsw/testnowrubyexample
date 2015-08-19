@@ -90,9 +90,9 @@ __Dont's__
 
 __Commmands__ 
 
-1. __cucumber features__ : This will execute all scenarios from all features
-2. __cucumber features/login.feature__ : This will only execute the scenarios in login feature file
-3. __cucumber features/login.feature:10__ : This will run only 1 scenario which has line number 10 in it from login.feature file
+1. __cucumber features/scenarios__ : This will execute all scenarios from all features
+2. __cucumber features/scenarios/login.feature__ : This will only execute the scenarios in login feature file
+3. __cucumber features/scenarios/login.feature:10__ : This will run only 1 scenario which has line number 10 in it from login.feature file
 
 ## Reporting :eyes:
 Magento automation reports are created in following 2 types of format
