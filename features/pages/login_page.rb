@@ -31,6 +31,7 @@ class LoginPage < PageObject
   element :mandatory_email_address_message, {id: "advice-required-entry-email_address"}
   element :mandatory_register_password_message, {id: "advice-required-entry-password"}
   element :mandatory_confirm_password_message, {id: "advice-required-entry-confirmation"}
+  element :certicate_error_page_continue_link, {id: "overridelink"}
 
   def initialize(page_driver)
     @driver=page_driver
@@ -39,9 +40,19 @@ class LoginPage < PageObject
   def go_to_homepage(portal)
     if portal == "customer"
       driver.get(ENV['TEST_URL'])
+      if ENV['BROWSER'] == 'IE'
+        if certicate_error_page_continue_link.size > 0
+          @driver.execute_script("document.getElementById('overridelink').click();")
+        end
+      end
       #raise "Not on Magento Homepage" unless is_homepage?
     elsif portal == "admin"
       driver.get("https://104.131.191.140/index.php/admin")
+      if ENV['BROWSER'] == 'IE'
+        if certicate_error_page_continue_link.size > 0
+          @driver.execute_script("document.getElementById('overridelink').click();")
+        end
+      end
       raise "Not on Magento Admin Page" unless is_admin_page?
     end
   end
