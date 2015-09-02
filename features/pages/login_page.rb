@@ -31,7 +31,6 @@ class LoginPage < PageObject
   element :mandatory_email_address_message, {id: "advice-required-entry-email_address"}
   element :mandatory_register_password_message, {id: "advice-required-entry-password"}
   element :mandatory_confirm_password_message, {id: "advice-required-entry-confirmation"}
-  element :certicate_error_page_continue_link, {id: "overridelink"}
 
   def initialize(page_driver)
     @driver=page_driver
@@ -41,7 +40,7 @@ class LoginPage < PageObject
     if portal == "customer"
       driver.get(ENV['TEST_URL'])
       if ENV['BROWSER'] == 'IE'
-        if certicate_error_page_continue_link.size > 0
+        if driver.find_elements(id: "overridelink").size > 0
           @driver.execute_script("document.getElementById('overridelink').click();")
         end
       end
@@ -49,7 +48,7 @@ class LoginPage < PageObject
     elsif portal == "admin"
       driver.get("https://104.131.191.140/index.php/admin")
       if ENV['BROWSER'] == 'IE'
-        if certicate_error_page_continue_link.size > 0
+        if driver.find_elements(id: "overridelink").size > 0
           @driver.execute_script("document.getElementById('overridelink').click();")
         end
       end
