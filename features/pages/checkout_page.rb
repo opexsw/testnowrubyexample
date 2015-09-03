@@ -9,7 +9,7 @@ class CheckoutPage < PageObject
   element :search_box, {id: "search"}
   element :search_button, {css: "button[title*='Search']"}
   element :product_catalog, {css: "div.category-products"}
-  element :proceed_to_checkout, {css: "ul.top button[title*='Proceed to Checkout']"}
+  element :proceed_to_checkout, {css: "button[title*='Proceed to Checkout']"}
   element :checkout_as_guest_radio, {id: "login:guest"}
   element :checkout_continue_button, {id: "onepage-guest-register-button"}
   element :page_primary_message ,{css: "div.page-title h1"}
