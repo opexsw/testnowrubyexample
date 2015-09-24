@@ -17,8 +17,9 @@ Then /^I should see products$/ do
   checkout.product_catalog.displayed?.should == true
 end
 
-Then /^I add to cart the product number (\d+)$/ do |index|
-  driver.find_element(xpath: "//ul[contains(@class,'products-grid')]/li[#{index}]//button").click
+Then /^I add to cart the product (?:based on|number) (RUN_INDEX|\d+)$/ do |index|
+  checkout = CheckoutPage.new(@driver)
+  checkout.add_product_to_cart(index)
 end
 
 Then /^I proceed to checkout$/ do

@@ -11,7 +11,7 @@ Feature: Add product to cart and checkout using different payment methods
   Scenario: Add product to cart and checkout as a GUEST with payment method CREDIT CARD
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 1
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     When I select checkout method as Guest
     And I fill all mandatory details in Billing Information as guest
@@ -23,7 +23,7 @@ Feature: Add product to cart and checkout using different payment methods
   Scenario: Add product to cart and checkout as a GUEST with payment method CASH ON DELIVERY
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 2
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     When I select checkout method as Guest
     And I fill all mandatory details in Billing Information as guest
@@ -35,7 +35,7 @@ Feature: Add product to cart and checkout using different payment methods
   Scenario: Add product to cart and checkout as a GUEST with payment method CHEQUE
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 3
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     When I select checkout method as Guest
     And I fill all mandatory details in Billing Information as guest
@@ -50,7 +50,7 @@ Feature: Add product to cart and checkout using different payment methods
     And I click the register button
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 1
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     And I fill all mandatory details in Billing Information as member
     And I continue with shipping method
@@ -64,7 +64,7 @@ Feature: Add product to cart and checkout using different payment methods
     And I click the register button
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 2
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     And I fill all mandatory details in Billing Information as member
     And I continue with shipping method
@@ -78,7 +78,7 @@ Feature: Add product to cart and checkout using different payment methods
     And I click the register button
     When I do a global search using "Samsung" keyword
     Then I should see products
-    When I add to cart the product number 3
+    When I add to cart the product based on RUN_INDEX
     Then I proceed to checkout
     And I fill all mandatory details in Billing Information as member
     And I continue with shipping method

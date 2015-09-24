@@ -66,4 +66,18 @@ class CheckoutPage < PageObject
     select_drop_down_by_text("ccsave_expiration_yr","2025")
   end
 
+  def add_product_to_cart(type)
+    if type == "RUN_INDEX"
+      if ENV['RUN_INDEX'].nil?
+        index = rand(3)
+      else
+        index = ENV['RUN_INDEX'].to_i%3
+        index = 3 if index == 0
+      end
+    else
+      index = type.to_i
+    end
+    driver.find_element(xpath: "//ul[contains(@class,'products-grid')]/li[#{index}]//button").click
+  end
+
 end
