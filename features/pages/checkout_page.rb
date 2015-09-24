@@ -72,8 +72,8 @@ class CheckoutPage < PageObject
         index = rand(3)
       else
         index = ENV['RUN_INDEX'].to_i%3
-        index = 3 if index == 0
       end
+      index = 3 if index == 0
     else
       index = type.to_i
     end
