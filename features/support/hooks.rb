@@ -12,7 +12,7 @@ Before do
       launch_driver_android
     when "opera"
       launch_driver_opera
-    when "AndroidChrome"
+    when "androidchrome"
       launch_driver_android_chrome  
     when "ie"
       launch_driver_ie
