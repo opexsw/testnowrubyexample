@@ -9,11 +9,30 @@ ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
 
 #Firefox browser
 def launch_driver_firefox
-  @driver = Selenium::WebDriver.for :firefox
+  #puts "Launching driver for firefox.........................."
+  ENV['HAR'] = "false" if ENV['HAR'].nil?
+  if ENV['HAR']=="true"
+    profile = Selenium::WebDriver::Firefox::Profile.new
+    profile.add_extension("./harexport/firebug-2.0.13.xpi")
+    profile.add_extension("./harexport/netExport-0.8.xpi")
+    profile['extensions.firebug.allPagesActivation'] = "on"
+    profile['extensions.firebug.defaultPanelName'] = "net"
+    profile['extensions.firebug.net.enableSites'] = "true"
+    profile['extensions.firebug.showFirstRunPage'] = "false"
+    profile['extensions.firebug.netexport.alwaysEnableAutoExport'] = "true"
+    profile['extensions.firebug.netexport.showPreview'] = "false"
+    profile['extensions.firebug.netexport.defaultLogDir'] = File.absolute_path("./report/")
+    profile['extensions.firebug.netexport.defaultFileName'] = "upaReport.har"
+    profile['extensions.firebug.netexport.jsonpCallback'] = "jsonCallback";
+    @driver = Selenium::WebDriver.for :firefox, :profile => profile
+  else
+    @driver = Selenium::WebDriver.for :firefox
+  end
   @driver.manage.timeouts.implicit_wait = 30
   #@driver.manage.timeouts.page_load = 120
   @driver.manage.window.maximize
 end
+
 
 #Chrome browser
 def launch_driver_chrome
