@@ -22,6 +22,12 @@ Before do
 end
 
 After do |scenario|
+  unsorted_har_list=Dir['reports/har/*+*.har']
+  sorted_har_list=unsorted_har_list.sort_by!{ |m| m.downcase }
+  sorted_har_list.each_with_index do |har,i|
+    File.rename(har,"reports/har/#{scenario.name.squeeze.gsub(" ","_")}_#{i+1}.har")
+  end
+
   if scenario.failed?
     begin
       encoded_img = driver.screenshot_as(:base64)
