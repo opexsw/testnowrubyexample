@@ -27,7 +27,7 @@ After do |scenario|
   sorted_har_list.each_with_index do |har,i|
 	new_name = scenario.name.squeeze.gsub(" ","_")
     File.rename(har,"reports/har/#{new_name}_#{i+1}.har")
-    `simplehar reports/har/#{new_name}_#{i+1}.har reports/har/#{new_name}_#{i+1}.html`	
+    `simplehar reports/har/#{new_name}_#{i+1}.har reports/#{new_name}_#{i+1}.html`	
     embed("#{new_name}_#{i+1}.html","text/html","UPA")
   end
 

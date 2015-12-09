@@ -1,1 +1,1 @@
-default: --require features --no-source --color --format pretty --format html --out reports/magento_report.html --format json --out reports/magento_report.json
+default: --require features --no-source --color --format pretty --format Formatter::HtmlFormatter --out reports/magento_report.html --format json --out reports/magento_report.json
