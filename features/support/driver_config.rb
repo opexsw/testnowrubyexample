@@ -10,8 +10,8 @@ ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
 #Firefox browser
 def launch_driver_firefox
   #puts "Launching driver for firefox.........................."
-  ENV['HAR'] = "false" if ENV['HAR'].nil?
-  if ENV['HAR']=="true"
+  ENV['IS_UPA'] = "false" if ENV['IS_UPA'].nil?
+  if ENV['IS_UPA']=="true"
     profile = Selenium::WebDriver::Firefox::Profile.new
     profile.add_extension("./data/har/firebug-2.0.13.xpi")
     profile.add_extension("./data/har/netExport-0.8.xpi")
