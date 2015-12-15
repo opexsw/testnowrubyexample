@@ -5,7 +5,8 @@ class HtmlFormatter < Cucumber::Formatter::Html
   def embed(src, mime_type, label)
   case(mime_type)
   when /^image\/(png|gif|jpg|jpeg)/
-  embed_image(src, label)
+  super(src, mime_type, label)
+  #embed_image(src, label)
   when /^text\/html/
   embed_link(src, label)
    end
