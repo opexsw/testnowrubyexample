@@ -51,7 +51,7 @@ AfterStep do
     File.rename(har,"reports/har/#{new_name}.har")
     `simplehar reports/har/#{new_name}.har reports/har/#{new_name}.html`
     final_path=File.absolute_path("#{new_name}.html", "reports/har")
-    embed(final_path,"text/html","UPA")
+    embed("har/#{new_name}.html","text/html","UPA")
   end
 
   begin
