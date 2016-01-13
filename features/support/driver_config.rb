@@ -44,7 +44,9 @@ end
 
 #IE browser
 def launch_driver_ie
-  caps = Selenium::WebDriver::Remote::Capabilities.ie(:javascript_enabled => true, :native_events => false, :acceptSslCerts => true)
+  client = Selenium::WebDriver::Remote::Http::Default.new
+  client.timeout = 120
+  caps = Selenium::WebDriver::Remote::Capabilities.ie(:javascript_enabled => true, :http_client => client,  :native_events => false, :acceptSslCerts => true)
   @driver = Selenium::WebDriver.for(:ie, :desired_capabilities => caps)
   @driver.manage.timeouts.implicit_wait = 90
   @driver.manage.timeouts.page_load = 120
