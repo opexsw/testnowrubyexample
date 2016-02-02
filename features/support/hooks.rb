@@ -50,7 +50,7 @@ AfterStep do
     new_name = "#{@scenario_name.squeeze.gsub(" ","_")}_#{@step+=1}"
     File.rename(har,"reports/har/#{new_name}.har")
     `simplehar reports/har/#{new_name}.har reports/har/#{new_name}.html`
-    report_file = File.absolute_path("#{new_name}.html","report")
+    report_file = File.absolute_path("#{new_name}.html","reports/har")
     doc = File.read(report_file)
     new_doc = doc.gsub("simpleharSrc", "https://rafacesar.github.io/simplehar/src")
     new_docc = new_doc.gsub("http:", "https:")
