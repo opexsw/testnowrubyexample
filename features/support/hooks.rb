@@ -44,19 +44,13 @@ at_exit do
 end
 
 AfterStep do
-  unsorted_har_list=Dir['reports/har/*+*.har']
+  unsorted_har_list=Dir['reports/upa/*+*.har']
   sorted_har_list=unsorted_har_list.sort_by!{ |m| m.downcase }
   sorted_har_list.each do |har|
     new_name = "#{@scenario_name.squeeze.gsub(" ","_")}_#{@step+=1}"
-    File.rename(har,"reports/har/#{new_name}.har")
-    `simplehar reports/har/#{new_name}.har reports/har/#{new_name}.html`
-    report_file = File.absolute_path("#{new_name}.html","reports/har")
-    doc = File.read(report_file)
-    new_doc = doc.gsub("simpleharSrc", "https://rafacesar.github.io/simplehar/src")
-    new_docc = new_doc.gsub("http:", "https:")
-    File.open(report_file, "w") {|file| file.puts new_docc }
-    final_path=File.absolute_path("#{new_name}.html", "reports/har")
-    embed("har/#{new_name}.html","text/html","UPA")
+    File.rename(har,"reports/upa/#{new_name}.har")
+    `simplehar reports/upa/#{new_name}.har reports/upa/#{new_name}.html`
+    embed("upa/#{new_name}.html","text/html","UPA")
   end
 
   begin
