@@ -21,7 +21,7 @@ def launch_driver_firefox
     profile['extensions.firebug.showFirstRunPage'] = "false"
     profile['extensions.firebug.netexport.alwaysEnableAutoExport'] = "true"
     profile['extensions.firebug.netexport.showPreview'] = "false"
-    profile['extensions.firebug.netexport.defaultLogDir'] = File.absolute_path("./reports/har")
+    profile['extensions.firebug.netexport.defaultLogDir'] = File.absolute_path("./reports/upa")
     profile['extensions.firebug.netexport.defaultFileName'] = "upaReport.har"
     profile['extensions.firebug.netexport.jsonpCallback'] = "jsonCallback";
     @driver = Selenium::WebDriver.for :firefox, :profile => profile
