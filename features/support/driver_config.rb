@@ -51,6 +51,8 @@ def launch_driver_ie
   @driver.manage.timeouts.implicit_wait = 90
   @driver.manage.timeouts.page_load = 120
   if ENV['RESOLUTION'].nil?
+    @driver.manage.window.size = Selenium::WebDriver::Dimension.new(1366,768)
+  elsif ENV['RESOLUTION'].downcase == "max"
     @driver.manage.window.maximize
   else
     res = ENV['RESOLUTION'].split('x')
