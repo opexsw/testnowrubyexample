@@ -48,8 +48,10 @@ class LoginPage < PageObject
     elsif portal == "admin"
       driver.get("https://104.131.191.140/index.php/admin")
       if ENV['BROWSER'] == 'IE'
-        if driver.find_elements(id: "overridelink").size > 0
-          @driver.execute_script("document.getElementById('overridelink').click();")
+        begin
+          driver.get("javascript:document.getElementById('overridelink').click();")
+        rescue
+          p "Some Issue related to security certificate..."
         end
       end
       raise "Not on Magento Admin Page" unless is_admin_page?
