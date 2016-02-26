@@ -40,8 +40,10 @@ class LoginPage < PageObject
     if portal == "customer"
       driver.get(ENV['TEST_URL'])
       if ENV['BROWSER'] == 'IE'
-        if driver.find_elements(id: "overridelink").size > 0
-          @driver.execute_script("document.getElementById('overridelink').click();")
+        begin
+          driver.get("javascript:document.getElementById('overridelink').click();")
+        rescue
+          p "Some Issue related to security certificate..."
         end
       end
       #raise "Not on Magento Homepage" unless is_homepage?
