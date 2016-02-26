@@ -9,7 +9,9 @@ Then /^I should be on "([^"]*)" page$/ do |page|
     when "My Dashboard"
       driver.find_element(css: "div.dashboard h1").text.should == page.upcase
     when "Logout"
-      driver.find_element(css: "div.page-title").text.include?("LOGGED OUT").should == true
+      if ENV['BROWSER'].downcase != "ie"
+        driver.find_element(css: "div.page-title").text.include?("LOGGED OUT").should == true
+      end
   end
 end
 
