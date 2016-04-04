@@ -68,9 +68,9 @@ def launch_driver_opera
   service.start
   cap = Selenium::WebDriver::Remote::Capabilities.chrome('operaOptions' => {'binary' => '/usr/bin/opera', 'args' => ["--ignore-certificate-errors"]})
   @driver = Selenium::WebDriver.for(:remote, :url => service.uri, :desired_capabilities => cap, :http_client => client)
-  @driver.manage.timeouts.implicit_wait = 60
+  @driver.manage.timeouts.implicit_wait = 90
   @driver.manage.window.maximize
-  @driver.manage.timeouts.page_load = 120
+  @driver.manage.timeouts.page_load = 150
 end
 
  def launch_driver_android_chrome
