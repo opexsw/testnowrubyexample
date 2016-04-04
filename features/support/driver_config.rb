@@ -69,6 +69,7 @@ def launch_driver_opera
   cap = Selenium::WebDriver::Remote::Capabilities.chrome('operaOptions' => {'binary' => '/usr/bin/opera', 'args' => ["--ignore-certificate-errors"]})
   @driver = Selenium::WebDriver.for(:remote, :url => service.uri, :desired_capabilities => cap, :http_client => client)
   @driver.manage.timeouts.implicit_wait = 90
+  sleep(5)
   @driver.manage.window.maximize
   @driver.manage.timeouts.page_load = 150
 end
