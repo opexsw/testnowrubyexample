@@ -62,7 +62,6 @@ end
 
 #Opera browser
 def launch_driver_opera
-  @driver.quit
   client = Selenium::WebDriver::Remote::Http::Default.new
   client.timeout = 180 # seconds
   service = Selenium::WebDriver::Chrome::Service.new("/usr/local/bin/operadriver", 48923)
