@@ -18,6 +18,5 @@ include TestNow
 
 include SeleniumFury::SeleniumWebDriver::CreateSeleniumWebDriver
 
-require File.dirname(__FILE__) + "/../support/driver_config"
 require File.dirname(__FILE__) + "/../support/utilities"
 include TestNowRubyExample
