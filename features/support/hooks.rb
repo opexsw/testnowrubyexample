@@ -5,22 +5,10 @@
 
 
 Before do |scenario|
+  ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
   @scenario_name=scenario.name
   @step=0
-  case ENV['BROWSER'].downcase
-    when "chrome"
-      launch_driver_chrome
-    when "android"
-      launch_driver_android
-    when "opera"
-      launch_driver_opera
-    when "androidchrome"
-      launch_driver_android_chrome  
-    when "ie"
-      launch_driver_ie
-    else
-      launch_driver_firefox
-  end
+  @driver = TestNow.init
 end
 
 After do |scenario|
