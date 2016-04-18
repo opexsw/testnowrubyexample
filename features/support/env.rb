@@ -11,8 +11,10 @@ require 'rake'
 require 'faker'
 require 'selenium_fury'
 require 'json'
+require 'testnow'
 
 include RSpec::Matchers
+include TestNow
 
 include SeleniumFury::SeleniumWebDriver::CreateSeleniumWebDriver
 
