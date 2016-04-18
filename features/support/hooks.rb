@@ -5,6 +5,7 @@
 
 
 Before do |scenario|
+  ENV['HAR_DIR'] = File.absolute_path("./reports/upa")
   ENV['TEST_URL'] = "https://104.131.191.140" if ENV['TEST_URL'].nil?
   @scenario_name=scenario.name
   @step=0
@@ -52,6 +53,15 @@ AfterStep do
     p "*** Could Not take screenshot ***"
   end
 end
+
+def driver
+  @driver
+end
+
+def quit_driver
+  @driver.quit
+end
+
 
 
 
