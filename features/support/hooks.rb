@@ -52,8 +52,14 @@ AfterStep do
     `simplehar reports/upa/#{new_name}.har reports/upa/#{new_name}.html`
     report_file = File.absolute_path("#{new_name}.html","reports/upa")
     doc = File.read(report_file)
+   
     new_doc = doc.gsub("SimpleHar", "TestNow UPA Report")
-    File.open(report_file, "w") {|file| file.puts new_doc }
+    new_docc = new_doc.gsub("http:", "https:")
+    File.open(report_file, "w") {|file| file.puts new_docc }
+    
+    #new_doc = doc.gsub("SimpleHar", "TestNow UPA Report")
+    #File.open(report_file, "w") {|file| file.puts new_doc }
+    
     embed("upa/#{new_name}.html","text/html","UPA")
   end
 
