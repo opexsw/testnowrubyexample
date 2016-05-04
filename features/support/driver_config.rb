@@ -44,7 +44,6 @@ end
 
 #Device
 def launch_driver_device
-  def launch_driver_device
     #puts "Launching driver for chrome.........................."
     # @driver = Selenium::WebDriver.for :chrome
     # @driver.manage.timeouts.implicit_wait = 60
@@ -56,7 +55,6 @@ def launch_driver_device
         "chromeOptions" => { "mobileEmulation" => mobile_emulation })
     @driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
     @driver.manage.timeouts.implicit_wait = 60
-  end
 end
 
 #IE browser
