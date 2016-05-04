@@ -42,6 +42,23 @@ def launch_driver_chrome
   @driver.manage.window.maximize
 end
 
+#Device
+def launch_driver_device
+  def launch_driver_device
+    #puts "Launching driver for chrome.........................."
+    # @driver = Selenium::WebDriver.for :chrome
+    # @driver.manage.timeouts.implicit_wait = 60
+    # @driver.manage.window.maximize
+    deviceName = ENV['VERSION']
+    deviceName = deviceName.gsub("_", " ")
+    mobile_emulation = { "deviceName" => deviceName }
+    caps = Selenium::WebDriver::Remote::Capabilities.chrome(
+        "chromeOptions" => { "mobileEmulation" => mobile_emulation })
+    @driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+    @driver.manage.timeouts.implicit_wait = 60
+  end
+end
+
 #IE browser
 def launch_driver_ie
   client = Selenium::WebDriver::Remote::Http::Default.new

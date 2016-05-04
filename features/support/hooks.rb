@@ -18,6 +18,8 @@ Before do |scenario|
       launch_driver_android_chrome  
     when "ie"
       launch_driver_ie
+    when "device"
+      launch_driver_device
     else
       launch_driver_firefox
   end
