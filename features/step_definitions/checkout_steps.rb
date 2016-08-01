@@ -6,6 +6,8 @@
 
 When /^I do a global search using "([^"]*)" keyword$/ do |keyword|
   checkout = CheckoutPage.new(@driver)
+  Selenium::WebDriver::Wait.new(timeout: 30).until {checkout.search_box_link.displayed?}
+  checkout.search_box_link.click
   checkout.search_box.send_keys(keyword)
   checkout.search_button.click
   #checkout.search_box.send_keys(:return)

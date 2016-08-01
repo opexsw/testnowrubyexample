@@ -7,6 +7,7 @@
 class CheckoutPage < PageObject
 
   element :search_box, {id: "search"}
+  element :search_box_link, {css: "a[href*='#header-search']"}
   element :search_button, {css: "button[title*='Search']"}
   element :product_catalog, {css: "div.category-products"}
   element :proceed_to_checkout, {css: "button[title*='Proceed to Checkout']"}
